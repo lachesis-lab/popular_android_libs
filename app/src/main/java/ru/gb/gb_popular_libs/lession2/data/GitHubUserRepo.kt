@@ -1,7 +1,9 @@
 package ru.gb.gb_popular_libs.lession2.data
 
-interface GitHubUserRepo {
-    fun getUsers(): List<GitHubUser>
+import io.reactivex.rxjava3.core.Single
 
-    fun getUserByLogin(userId: String): GitHubUser?
+interface GitHubUserRepo  {
+    fun getUsers(): Single<List<GitHubUser>>
+
+    fun getUserByLogin(userId: String): Single<GitHubUser>
 }

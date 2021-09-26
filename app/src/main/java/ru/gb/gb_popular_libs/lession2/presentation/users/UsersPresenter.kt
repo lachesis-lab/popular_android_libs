@@ -1,6 +1,7 @@
 package ru.gb.gb_popular_libs.lession2.presentation.users
 
 import com.github.terrakok.cicerone.Router
+import io.reactivex.rxjava3.disposables.Disposable
 import moxy.MvpPresenter
 import ru.gb.gb_popular_libs.lession2.data.GitHubUser
 import ru.gb.gb_popular_libs.lession2.data.GitHubUserRepo
@@ -11,18 +12,43 @@ class UsersPresenter(
     private val router: Router
 ) :
     MvpPresenter<UsersView>() {
+    val usersCollection: MutableList<GitHubUser> = mutableListOf()
+    private lateinit var disposable: Disposable
+
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        repository.getUsers().let { viewState::showUsers }
+        getUsers()
     }
+
 
     fun displayUser(user: GitHubUser) =
         router.navigateTo(UserScreen(user.login))
 
-    fun getCount(): Int = repository.getUsers().count()
+    fun getCount(): Int {
+        return usersCollection.count()
+    }
 
+    fun getUsers() {
+        disposable =
+            repository
+                .getUsers()
+                .subscribe({ users ->
+                    usersCollection.clear()
+                    usersCollection.addAll(users)
+                },
+                    { e -> println(e.message.toString()) }
+                )
 
-    fun getUser(pos: Int):GitHubUser =  repository.getUsers()[pos]
+    }
 
+    fun getUser(pos: Int): GitHubUser {
+        return usersCollection[pos]
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        disposable.dispose()
+    }
 
 }

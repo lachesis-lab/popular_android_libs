@@ -27,7 +27,8 @@ class UsersAdapter(
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
 
-        holder.bind(presenter.getUser(position), delegate!!)
+        holder.bind(presenter
+        .getUser(position), delegate!!)
     }
 
     override fun getItemCount(): Int {
