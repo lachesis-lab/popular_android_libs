@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImageTransform</string>
+    <string name="convert_button_text">Конвертировать</string>
+</resources>
