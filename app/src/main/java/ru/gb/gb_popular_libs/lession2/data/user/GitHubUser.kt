@@ -1,4 +1,4 @@
-package ru.gb.gb_popular_libs.lession2.data
+package ru.gb.gb_popular_libs.lession2.data.user
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

@@ -8,15 +8,17 @@ import androidx.fragment.app.Fragment
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import ru.gb.gb_popular_libs.lession2.R
-import ru.gb.gb_popular_libs.lession2.data.GitHubUser
-import ru.gb.gb_popular_libs.lession2.data.GithubUsersRepoImpl
+import ru.gb.gb_popular_libs.lession2.data.user.GitHubUser
+import ru.gb.gb_popular_libs.lession2.data.user.GithubUsersRepoImpl
 import ru.gb.gb_popular_libs.lession2.databinding.UserBinding
 
 
 class UserFragment : MvpAppCompatFragment(R.layout.user), UserView {
 
     private var viewBinding: UserBinding? = null
-    private val presenter: UserPresenter?  by moxyPresenter { UserPresenter(userLogin,GithubUsersRepoImpl()) }
+    private val presenter: UserPresenter?  by moxyPresenter { UserPresenter(userLogin,
+        GithubUsersRepoImpl()
+    ) }
     private val userLogin: String by lazy {
         arguments?.getString(USER_LOGIN).orEmpty()
     }

@@ -3,8 +3,8 @@ package ru.gb.gb_popular_libs.lession2.presentation.users
 import com.github.terrakok.cicerone.Router
 import io.reactivex.rxjava3.disposables.Disposable
 import moxy.MvpPresenter
-import ru.gb.gb_popular_libs.lession2.data.GitHubUser
-import ru.gb.gb_popular_libs.lession2.data.GitHubUserRepo
+import ru.gb.gb_popular_libs.lession2.data.user.GitHubUser
+import ru.gb.gb_popular_libs.lession2.data.user.GitHubUserRepo
 import ru.gb.gb_popular_libs.lession2.presentation.user.UserScreen
 
 class UsersPresenter(

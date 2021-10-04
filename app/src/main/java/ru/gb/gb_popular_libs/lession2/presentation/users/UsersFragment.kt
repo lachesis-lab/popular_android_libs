@@ -8,7 +8,7 @@ import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 import ru.gb.gb_popular_libs.lession2.App.Navigation.router
 import ru.gb.gb_popular_libs.lession2.R
-import ru.gb.gb_popular_libs.lession2.data.GitHubUser
+import ru.gb.gb_popular_libs.lession2.data.user.GitHubUser
 import ru.gb.gb_popular_libs.lession2.data.GitHubUserRepoFactory
 import ru.gb.gb_popular_libs.lession2.databinding.UsersBinding
 

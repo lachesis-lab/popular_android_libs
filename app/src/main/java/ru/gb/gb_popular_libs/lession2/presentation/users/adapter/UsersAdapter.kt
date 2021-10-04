@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.gb.gb_popular_libs.lession2.R
-import ru.gb.gb_popular_libs.lession2.data.GitHubUser
+import ru.gb.gb_popular_libs.lession2.data.user.GitHubUser
 import ru.gb.gb_popular_libs.lession2.databinding.UserBinding
 
 class UsersAdapter(
